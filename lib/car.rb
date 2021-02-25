@@ -1,4 +1,3 @@
-require 'pry'
 class Car
   attr_reader :make,
               :model,
@@ -15,4 +14,5 @@ class Car
     @year = hash[:year]
     @age = 2021 - hash[:year].to_i
   end
+
 end

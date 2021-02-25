@@ -4,7 +4,7 @@ require 'minitest/pride'
 require './lib/car'
 require './lib/owner'
 require './lib/garage'
-require 'pry'
+
 
 class GarageTest < Minitest::Test
   def test_it_exists
@@ -116,5 +116,27 @@ class GarageTest < Minitest::Test
     assert_equal [car_3, car_1, car_2], garage.oldest_cars
   end
 
+  def test_owner_of_oldest_car
+    garage = Garage.new('Totally Safe Garage')
 
+    owner_1 = Owner.new('Regina George', 'Heiress')
+    owner_2 = Owner.new('Glen Coco', 'Unknown')
+
+    car_1 = Car.new({description: 'Green Ford Mustang', year: '1967'})
+    car_2 = Car.new({description: 'Blue Ford Escape', year: '2001'})
+    car_3 = Car.new({description: 'Green Chevrolet Corvette', year: '1963'})
+    car_4 = Car.new({description: 'Silver Volvo XC90', year: '2020'})
+
+    owner_1.buy('1967 Green Ford Mustang')
+    owner_1.buy('2001 Blue Ford Escape')
+
+    owner_2.buy('1963 Green Chevrolet Corvette')
+    owner_2.buy('2020 Silver Volvo XC90')
+
+    garage.add_customer(owner_1)
+    garage.add_customer(owner_2)
+    # binding.pry
+
+    assert_equal "Glen Coco", garage.owner_of_oldest_car
+  end
 end

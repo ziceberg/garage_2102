@@ -32,7 +32,15 @@ class Garage
 
   def oldest_cars
     all_cars.find_all do |car|
-      car.year.to_i < 2020
+      car.year.to_i < 2020 # re-work
     end
   end
+
+  # def owner_of_oldest_car
+  #   @customers.each do |customer|
+  #     customer.cars.select do |car|
+  #       customer.name if car.year.to_i > car.year.to_i
+  #     end
+  #   end
+  # end
 end
