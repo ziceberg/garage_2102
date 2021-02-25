@@ -97,7 +97,7 @@ RSpec.describe 'car park spec' do
       expect(@garage.all_cars[2].year).to eq("1963")
     end
 
-    it '12. Garage #cars_by_make'
+    it '12. Garage #cars_by_make' do
       @regina.buy('1967 Green Ford Mustang')
       @regina.buy('2001 Blue Ford Escape')
       @glen.buy('1963 Red Chevrolet Corvette')
@@ -118,7 +118,7 @@ RSpec.describe 'car park spec' do
       expect(actual["Volvo"].count).to eq(1)
     end
 
-    it '13. Garage #oldest_cars'
+    it '13. Garage #oldest_cars' do
       @regina.buy('1967 Green Ford Mustang')
       @regina.buy('2001 Blue Ford Escape')
       @glen.buy('1963 Red Chevrolet Corvette')
